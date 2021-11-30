@@ -46,10 +46,29 @@ document.addEventListener('mouseup', () => {
   titles.forEach(title => title.style.backgroundColor = '');
 })
 
-// 7. 
+// 7. Load event, alert when page is loaded
+window.addEventListener('load', () => {
+  alert('Page is fully loaded. Welcome!');
+})
 
-// 8. 
+// 8. Pointerenter event to make buttons disappear before they can be clicked
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(btn => {
+  btn.addEventListener('pointerenter', () => {
+    btn.style.display = 'none';
+  });
+});
 
-// 9. 
+// 9. Copy event that sends a funny alert when someone copies anything on the page
+document.addEventListener('copy', () => {
+  alert('Trying to copy me huh? You better watch it bub.');
+  alert('Seriously.');
+})
 
-// 10. 
+// 10. Dblclick event to make the images on page disappear
+const imgs = document.querySelectorAll('img');
+imgs.forEach(img => {
+  img.addEventListener('dblclick', () => {
+    img.style.display = 'none';
+  })
+})
