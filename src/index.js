@@ -19,7 +19,14 @@ document.addEventListener('keydown', evt => {
   }
 })
 
-// 3. Click event, with preventDefault on links to open to RickRoll links
+// 3. Keyup event to return the color of H2
+document.addEventListener('keyup', evt => {
+  if(evt.key === 'p') {
+    titles.forEach(title => title.style.color = '');
+  }
+})
+
+// 4. Click event, with preventDefault on links to open to RickRoll links
 const links = document.querySelectorAll('.nav-link');
 links.forEach(link => {
   link.addEventListener('click', (evt) => {
@@ -27,13 +34,17 @@ links.forEach(link => {
     link.setAttribute('target', '_blank');
     link.setAttribute('href', 'https://rickrolled.com/');
   })
+}) 
+
+// 5. Mousedown event to change background color of H2 elements
+document.addEventListener('mousedown', () => {
+  titles.forEach(title => title.style.backgroundColor = 'cyan');
 })
 
-// 4. 
-
-// 5. 
-
-// 6. 
+// 6. Mouseup event to revert colors and demonstrate difference between these and click event
+document.addEventListener('mouseup', () => {
+  titles.forEach(title => title.style.backgroundColor = '');
+})
 
 // 7. 
 
